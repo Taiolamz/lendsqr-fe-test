@@ -1,0 +1,50 @@
+// .layout-wrap {
+//   background: red;
+//   // background: var(--white-shade-color);
+//   position: absolute;
+//   min-width: 100vh;
+//   height: 100vh;
+//   right: 0;
+//   left: 0;
+.layout-box {
+  //   background: red;
+  position: absolute;
+  top: 7.6rem;
+  right: 0;
+  //   display: flex;
+  //   flex-direction: column;
+  width: calc(100% - 28.3rem);
+  background: var(--white-shade-color);
+  height: calc(100vh - 7.6rem);
+  padding: 5.5rem;
+  z-index: 1;
+  overflow-y: scroll;
+  transition: width 0.5s;
+
+  &::-webkit-scrollbar:horizontal {
+    display: none;
+  }
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    // -webkit-box-shadow: none !important;
+    background-color: transparent !important;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: var(--light-green-color);
+    border-radius: 30rem;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--light-green-color);
+  }
+}
+// }

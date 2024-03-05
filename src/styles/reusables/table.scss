@@ -1,0 +1,88 @@
+.dashboard-table-wrap {
+  background: var(--white-color);
+  box-shadow: var(--dashboard-box-shadow);
+  border-radius: 0.4rem;
+  border: 0.1rem solid var(--card-border-color);
+  padding: 3.5rem;
+  margin-top: 3rem;
+  width: 100%;
+
+  .table-head-wrap {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    text-align: left;
+    margin-bottom: 2rem;
+
+    .table-head-box {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .table-name {
+        font-weight: 600;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .table-body-wrap {
+    display: flex;
+    flex-direction: column;
+    // margin-top: 3.5rem;
+
+    .table-row {
+      display: grid;
+      padding-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      position: relative;
+      align-items: center;
+
+      p {
+        font-weight: 400;
+        font-size: 1.4rem;
+        text-transform: capitalize;
+      }
+
+      .email-text {
+        text-transform: lowercase;
+      }
+
+      .status-wrap {
+        display: inline-flex;
+        padding-top: unset;
+
+        .inactive-status-text {
+          border-radius: 10rem;
+          padding: 0.8rem 2rem;
+          background: rgba(84, 95, 125, 0.06);
+        }
+        .pending-status-text {
+          @extend .inactive-status-text;
+          color: rgba(233, 178, 0, 1);
+          background: rgba(233, 178, 0, 0.06);
+        }
+        .blacklisted-text {
+          @extend .inactive-status-text;
+          color: rgba(228, 3, 59, 1);
+          background: rgba(228, 3, 59, 0.06);
+        }
+        .active-text {
+          @extend .inactive-status-text;
+          background: rgba(57, 205, 98, 0.06);
+          color: rgba(57, 205, 98, 1);
+        }
+      }
+      .ellipsis-icon {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid var(--border-color);
+      padding-bottom: 2rem;
+    }
+  }
+}

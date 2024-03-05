@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../src/assets/fonts/AvenirNextLTPro-Bold.otf") format("otf"),
+    url("../src/assets/fonts/AvenirNextLTPro-It.otf") format("otf"),
+    url("../src/assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  // --black-color: #303030;
+  // --text-color: #202223;
+  // --grey-color: #616a75;
+  // --border-color: #86898a;
+  // --active-border-color: #1a1a1a;
+  // --white-color: #ffffff;
+  // --primary-blue-color: #55a2ff;
+  // --blue-color: #005bd3;
+  // --border-box-shadow: inset 0px -1px 0px #b5b5b5,
+  //   inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0px 1.5px #ffffff;
+  --white-color: #ffffff;
+  --white-shade-color: #fbfbfb;
+  --dark-blue-color: #213f7d;
+  --text-color: #545f7d;
+  --border-color: rgba(84, 95, 125, 0.15);
+  --light-green-color: #39cdcc;
+  --transparent-green-color: rgba(57, 205, 204, 0.1);
+  --disabled-color: #484646cc;
+  --disabled-bg-color: #cccc;
+  --hr-color: #efe9e9cc;
+  --box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  --dashboard-box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  --card-border-color: rgba(33, 63, 125, 0.06);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--white-color) inset !important;
+  -webkit-text-fill-color: #333 !important;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  font-family: "Work Sans", sans-serif;
+  // font-family: "Avenir Next", sans-serif;
+  font-weight: 300;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}

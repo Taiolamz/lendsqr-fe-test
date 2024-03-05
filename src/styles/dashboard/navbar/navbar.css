@@ -1,0 +1,92 @@
+.navbar-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white-color);
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  padding: 1.3rem 3rem;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar-wrap .left-nav-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20rem;
+}
+.navbar-wrap .left-nav-wrap .lend-logo {
+  width: 14rem;
+  cursor: pointer;
+}
+.navbar-wrap .left-nav-wrap .search-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.navbar-wrap .left-nav-wrap .search-wrap .search-input {
+  width: 43rem;
+  outline: none;
+  border: 0.1rem solid var(--border-color);
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  padding-right: 7rem;
+  color: var(--text-color);
+}
+.navbar-wrap .left-nav-wrap .search-wrap .search-input::-moz-placeholder {
+  color: var(--text-color);
+  font-family: "Avenir Next";
+}
+.navbar-wrap .left-nav-wrap .search-wrap .search-input::placeholder {
+  color: var(--text-color);
+  font-family: "Avenir Next";
+}
+.navbar-wrap .left-nav-wrap .search-wrap .search-icon-wrap {
+  position: absolute;
+  cursor: pointer;
+  background: var(--light-green-color);
+  right: 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  width: 5.6rem;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+.navbar-wrap .right-nav-wrap {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+.navbar-wrap .right-nav-wrap .docs-wrap {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.navbar-wrap .right-nav-wrap .bell-notify-wrap {
+  cursor: pointer;
+}
+.navbar-wrap .right-nav-wrap .profile-wrap {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.navbar-wrap .right-nav-wrap .profile-wrap .avatar-img {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+}
+.navbar-wrap .right-nav-wrap .profile-wrap .nav-user-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.navbar-wrap .right-nav-wrap .profile-wrap .nav-user-wrap .nav-username {
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.navbar-wrap .right-nav-wrap .profile-wrap .nav-user-wrap .dropdown-icon {
+  margin-top: 0.35rem;
+}/*# sourceMappingURL=navbar.css.map */

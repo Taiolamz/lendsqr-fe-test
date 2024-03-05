@@ -1,0 +1,75 @@
+.dashboard-table-wrap {
+  background: var(--white-color);
+  box-shadow: var(--dashboard-box-shadow);
+  border-radius: 0.4rem;
+  border: 0.1rem solid var(--card-border-color);
+  padding: 3.5rem;
+  margin-top: 3rem;
+  width: 100%;
+}
+.dashboard-table-wrap .table-head-wrap {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.dashboard-table-wrap .table-head-wrap .table-head-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.dashboard-table-wrap .table-head-wrap .table-head-box .table-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.dashboard-table-wrap .table-body-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-table-wrap .table-body-wrap .table-row {
+  display: grid;
+  padding-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  position: relative;
+  align-items: center;
+}
+.dashboard-table-wrap .table-body-wrap .table-row p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+.dashboard-table-wrap .table-body-wrap .table-row .email-text {
+  text-transform: lowercase;
+}
+.dashboard-table-wrap .table-body-wrap .table-row .status-wrap {
+  display: inline-flex;
+  padding-top: unset;
+}
+.dashboard-table-wrap .table-body-wrap .table-row .status-wrap .inactive-status-text, .dashboard-table-wrap .table-body-wrap .table-row .status-wrap .active-text, .dashboard-table-wrap .table-body-wrap .table-row .status-wrap .blacklisted-text, .dashboard-table-wrap .table-body-wrap .table-row .status-wrap .pending-status-text {
+  border-radius: 10rem;
+  padding: 0.8rem 2rem;
+  background: rgba(84, 95, 125, 0.06);
+}
+.dashboard-table-wrap .table-body-wrap .table-row .status-wrap .pending-status-text {
+  color: rgb(233, 178, 0);
+  background: rgba(233, 178, 0, 0.06);
+}
+.dashboard-table-wrap .table-body-wrap .table-row .status-wrap .blacklisted-text {
+  color: rgb(228, 3, 59);
+  background: rgba(228, 3, 59, 0.06);
+}
+.dashboard-table-wrap .table-body-wrap .table-row .status-wrap .active-text {
+  background: rgba(57, 205, 98, 0.06);
+  color: rgb(57, 205, 98);
+}
+.dashboard-table-wrap .table-body-wrap .table-row .ellipsis-icon {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+.dashboard-table-wrap .table-body-wrap:not(:last-child) {
+  border-bottom: 0.1rem solid var(--border-color);
+  padding-bottom: 2rem;
+}/*# sourceMappingURL=table.css.map */

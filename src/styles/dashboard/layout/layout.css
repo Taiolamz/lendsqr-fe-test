@@ -1,0 +1,32 @@
+.layout-box {
+  position: absolute;
+  top: 7.6rem;
+  right: 0;
+  width: calc(100% - 28.3rem);
+  background: var(--white-shade-color);
+  height: calc(100vh - 7.6rem);
+  padding: 5.5rem;
+  z-index: 1;
+  overflow-y: scroll;
+  transition: width 0.5s;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.layout-box::-webkit-scrollbar:horizontal {
+  display: none;
+}
+.layout-box::-webkit-scrollbar {
+  width: 0.6rem;
+}
+.layout-box::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+.layout-box::-webkit-scrollbar-thumb {
+  background: var(--light-green-color);
+  border-radius: 30rem;
+}
+.layout-box::-webkit-scrollbar-thumb:hover {
+  background: var(--light-green-color);
+}/*# sourceMappingURL=layout.css.map */

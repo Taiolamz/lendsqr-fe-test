@@ -1,0 +1,19 @@
+.btn-wrap {
+  background: var(--disabled-bg-color);
+  outline: none;
+  border-radius: 0.8rem;
+  border: none;
+  padding: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--disabled-color);
+  transition: all 0.3s ease-in-out;
+  cursor: not-allowed;
+}
+
+.btn-wrap-active {
+  background: var(--light-green-color);
+  color: var(--white-color);
+  cursor: pointer;
+}
