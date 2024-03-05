@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useNavigate } from "react-router";
 import BriefcaseIcon from "../../assets/icons/briefcase 1.svg";
 import { dropdownArrow } from "../../assets/icons/svg";
