@@ -18,7 +18,7 @@ const Cards = ({ details }: CardDetails) => {
               <figure>
                 <img className="logo" src={logo} alt={`${logo}_icon`} />
               </figure>
-              <p className="title">{title}</p>
+              <p className="card-title">{title}</p>
               <p className="amount">{formatNumberWithCommas(amount)}</p>
             </div>
           );

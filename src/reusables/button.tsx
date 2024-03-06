@@ -3,26 +3,34 @@ import "../styles/reusables/button.css";
 
 interface BtnProp {
   label: string;
-  className?: string | any;
-  style?: any;
-  onClick?: () => void;
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: (e?: React.FormEvent<HTMLFormElement>) => void;
   type: "submit" | "reset" | "button";
-  active?: boolean | any;
+  active?: boolean;
 }
 
-const Button = ({
+const Button: React.FC<BtnProp> = ({
   label,
   active,
   onClick,
   style,
   type,
   className,
-}: BtnProp) => {
+}) => {
+  const handleClick = () => {
+    if (active && onClick) {
+      onClick();
+    }
+  };
+
   return (
     <button
-      className={`btn-wrap ${active ? "btn-wrap-active" : ""} ${className}`}
-      onClick={() => active && onClick && onClick()}
-      style={{ ...style }}
+      className={`btn-wrap ${active ? "btn-wrap-active" : ""} ${
+        className || ""
+      }`}
+      onClick={handleClick}
+      style={style}
       type={type}
     >
       {label}

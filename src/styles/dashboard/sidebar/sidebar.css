@@ -40,6 +40,12 @@
   font-size: 1.6rem;
   color: var(--dark-blue-color);
 }
+.sidebar-wrap .sidebar-top-wrap .drop-icon {
+  transition: 0.3s;
+}
+.sidebar-wrap .sidebar-top-wrap:hover .drop-icon {
+  transform: translateY(2px);
+}
 .sidebar-wrap .sidebar-items-wrap {
   display: flex;
   flex-direction: column;

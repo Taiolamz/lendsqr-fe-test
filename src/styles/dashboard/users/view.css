@@ -1,0 +1,193 @@
+.user-details-view-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.user-details-view-wrap .user-detail-top-wrap {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+.user-details-view-wrap .user-detail-top-wrap .user-view-label {
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+.user-details-view-wrap .user-detail-top-wrap .route-back-icon {
+  transition: 0.3s ease-in-out;
+}
+.user-details-view-wrap .user-detail-top-wrap:hover .route-back-icon {
+  transform: translateX(-3px);
+}
+.user-details-view-wrap .user-details-btn-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-details-view-wrap .user-details-btn-wrap .user-detail-header {
+  font-weight: 500;
+  font-size: 2.4rem;
+  color: var(--dark-blue-color);
+}
+.user-details-view-wrap .user-details-btn-wrap .user-details-right-wrap {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.user-details-view-wrap .user-details-btn-wrap .user-details-right-wrap p, .user-details-view-wrap .user-details-btn-wrap .user-details-right-wrap :nth-child(2) {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1.5rem 5rem;
+  background: transparent;
+  border: 1px solid #e4033b;
+  color: #e4033b;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.user-details-view-wrap .user-details-btn-wrap .user-details-right-wrap :nth-child(2) {
+  border: 1px solid var(--light-green-color);
+  color: var(--light-green-color);
+}
+.user-details-view-wrap .user-details-summary-wrap {
+  padding: 3.5rem;
+  position: relative;
+  background: var(--white-color);
+  border: 1px solid var(--card-border-color);
+  box-shadow: var(--dashboard-box-shadow);
+  border-radius: 0.4rem;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  padding-bottom: 3.5rem;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-profile-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-profile-wrap .user-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(33, 63, 125, 0.16);
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-profile-wrap .user-avatar-wrap .user-static-icon {
+  width: 27.92px;
+  height: 29.3px;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-profile-wrap .user-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-profile-wrap .user-detail-info .user-detail-name {
+  font-weight: 500;
+  font-size: 2.2rem;
+  color: var(--dark-blue-color);
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .hr-line {
+  width: 0.1rem;
+  height: 8rem;
+  background: rgba(84, 95, 125, 0.2);
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-tier-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-tier-wrap .user-star-wrap {
+  display: flex;
+  gap: 0.5rem;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-amount-details-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-amount-details-wrap .amount {
+  font-weight: 500;
+  font-size: 2.2rem;
+  color: var(--dark-blue-color);
+}
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-amount-details-wrap .bank-name {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--dark-blue-color);
+}
+.user-details-view-wrap .user-details-summary-wrap .user-tabs-wrap {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  right: 0;
+  width: 100%;
+  justify-content: space-between;
+  left: 0;
+  padding-left: 5rem;
+  text-align: center;
+  padding-right: 5rem;
+  cursor: pointer;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-tabs-wrap .user-tab-box {
+  width: 18rem;
+  font-size: 1.6rem;
+}
+.user-details-view-wrap .user-details-summary-wrap .user-tabs-wrap .active-user-tab-box {
+  border-bottom: 0.2rem solid var(--light-green-color);
+  padding-bottom: 1rem;
+  color: var(--light-green-color);
+}
+.user-details-view-wrap .more-user-datail-info-wrap {
+  padding: 3.5rem;
+  background: var(--white-color);
+  border: 1px solid var(--card-border-color);
+  box-shadow: var(--dashboard-box-shadow);
+  border-radius: 4px;
+}
+.user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap .personal-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap .personal-info-box:not(:last-child) {
+  border-bottom: 0.1rem solid rgba(33, 63, 125, 0.1);
+  padding-bottom: 3rem;
+}
+.user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap .personal-info-box .info-title {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--dark-blue-color);
+  text-transform: capitalize;
+}
+.user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap .personal-info-box .detail-sub-info-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+}
+.user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap .personal-info-box .detail-sub-info-wrap .detail-sub-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap .personal-info-box .detail-sub-info-wrap .detail-sub-info-box .info-box-label {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap .personal-info-box .detail-sub-info-wrap .detail-sub-info-box .remove-capitalize {
+  text-transform: none !important;
+}
+.user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap .personal-info-box .detail-sub-info-wrap .detail-sub-info-box .info-box-value {
+  font-weight: 500;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}/*# sourceMappingURL=view.css.map */

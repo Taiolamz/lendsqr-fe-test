@@ -13,7 +13,7 @@
 .navbar-wrap .left-nav-wrap {
   display: flex;
   align-items: center;
-  gap: 20rem;
+  gap: 17.5rem;
 }
 .navbar-wrap .left-nav-wrap .lend-logo {
   width: 14rem;
@@ -35,11 +35,11 @@
 }
 .navbar-wrap .left-nav-wrap .search-wrap .search-input::-moz-placeholder {
   color: var(--text-color);
-  font-family: "Avenir Next";
+  font-family: "Work Sans";
 }
 .navbar-wrap .left-nav-wrap .search-wrap .search-input::placeholder {
   color: var(--text-color);
-  font-family: "Avenir Next";
+  font-family: "Work Sans";
 }
 .navbar-wrap .left-nav-wrap .search-wrap .search-icon-wrap {
   position: absolute;

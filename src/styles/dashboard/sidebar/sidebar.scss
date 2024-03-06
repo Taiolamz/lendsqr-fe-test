@@ -38,16 +38,16 @@
     cursor: pointer;
     padding: 3rem;
     padding-bottom: unset;
-    // .brief-icon {
-    //   width: 1.3rem;
-    // }
-    // .drop-icon {
-    //   width: 1.3rem;
-    // }
     .switch-org-text {
       font-weight: 400;
       font-size: 1.6rem;
       color: var(--dark-blue-color);
+    }
+    .drop-icon {
+      transition: 0.3s;
+    }
+    &:hover .drop-icon {
+      transform: translateY(2px);
     }
   }
 
@@ -70,13 +70,9 @@
         align-items: center;
         gap: 1rem;
         cursor: pointer;
-        // opacity: 0.6;
         color: #848b9d;
         position: relative;
         padding: 0.7rem 3rem;
-        // .home-icon {
-        //   //   width: 1.3rem;
-        // }
 
         &::after {
           content: "";
@@ -86,7 +82,6 @@
           width: 0.4rem;
           height: 100%;
           background-color: var(--transparent-green-color);
-          // opacity: 0.1;
           transform: scaleY(0);
           transform-origin: bottom;
           transition: transform 0.4s, width 0.4s 0.4s;
@@ -113,7 +108,6 @@
           display: flex;
           align-items: center;
           gap: 1rem;
-          //   opacity: 0.5;
 
           color: #848b9d;
           cursor: pointer;
@@ -128,7 +122,6 @@
             width: 0.4rem;
             height: 100%;
             background-color: var(--transparent-green-color);
-            // opacity: 0.1;
             transform: scaleY(0);
             transform-origin: bottom;
             transition: transform 0.4s, width 0.4s 0.4s;
@@ -138,9 +131,9 @@
             width: 100%;
           }
 
-        //   .sub-icons {
-        //     // width: 1.3rem;
-        //   }
+          //   .sub-icons {
+          //     // width: 1.3rem;
+          //   }
           .span-bg {
             position: absolute;
             height: 100%;

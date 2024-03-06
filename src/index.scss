@@ -4,19 +4,9 @@
     url("../src/assets/fonts/AvenirNextLTPro-It.otf") format("otf"),
     url("../src/assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
 }
-@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  // --black-color: #303030;
-  // --text-color: #202223;
-  // --grey-color: #616a75;
-  // --border-color: #86898a;
-  // --active-border-color: #1a1a1a;
-  // --white-color: #ffffff;
-  // --primary-blue-color: #55a2ff;
-  // --blue-color: #005bd3;
-  // --border-box-shadow: inset 0px -1px 0px #b5b5b5,
-  //   inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0px 1.5px #ffffff;
   --white-color: #ffffff;
   --white-shade-color: #fbfbfb;
   --dark-blue-color: #213f7d;
@@ -24,7 +14,7 @@
   --border-color: rgba(84, 95, 125, 0.15);
   --light-green-color: #39cdcc;
   --transparent-green-color: rgba(57, 205, 204, 0.1);
-  --disabled-color: #484646cc;
+  --disabled-color: rgba(33, 63, 125, 0.4);
   --disabled-bg-color: #cccc;
   --hr-color: #efe9e9cc;
   --box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
@@ -51,11 +41,10 @@ html {
 }
 
 body {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--text-color);
   font-family: "Work Sans", sans-serif;
-  // font-family: "Avenir Next", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   width: 100vw;
   min-height: 100vh;

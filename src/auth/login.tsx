@@ -96,7 +96,7 @@ const Login = () => {
           >
             {Object.entries(details).map(([key, value]) => (
               <div className="auth-login-box" key={key}>
-                <label htmlFor={key}></label>
+                {/* <label htmlFor={key}></label> */}
                 <input
                   type={
                     key === "password" && !showPassword ? "password" : "text"

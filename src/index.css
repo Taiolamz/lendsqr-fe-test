@@ -11,7 +11,7 @@
   --border-color: rgba(84, 95, 125, 0.15);
   --light-green-color: #39cdcc;
   --transparent-green-color: rgba(57, 205, 204, 0.1);
-  --disabled-color: #484646cc;
+  --disabled-color: rgba(33, 63, 125, 0.4);
   --disabled-bg-color: #cccc;
   --hr-color: #efe9e9cc;
   --box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
@@ -38,10 +38,10 @@ html {
 }
 
 body {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--text-color);
   font-family: "Work Sans", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   width: 100vw;
   min-height: 100vh;

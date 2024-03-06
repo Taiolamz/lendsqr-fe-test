@@ -23,6 +23,7 @@ interface TableProps {
   four?: string;
   five?: string;
   status?: string;
+  activePage?: string;
   children?: ReactNode;
 }
 

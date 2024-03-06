@@ -1,6 +1,7 @@
 .auth-login-wrap {
   background: var(--white-color);
   display: flex;
+  font-family: "Avenir Next", sans-serif;
 }
 .auth-login-wrap .auth-login-left-wrap {
   background: var(--white-shade-color);
@@ -71,6 +72,7 @@
 .auth-login-wrap .auth-login-right-wrap .auth-login-right-box .login-sub-text {
   font-weight: 400;
   font-size: 20px;
+  margin-top: 1rem;
 }
 .auth-login-wrap .auth-login-right-wrap .auth-login-right-box .auth-login-form-wrap {
   display: flex;
@@ -105,13 +107,13 @@
   font-weight: 400;
   text-transform: capitalize;
   color: var(--text-color);
-  font-family: "Avenir Next", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 .auth-login-wrap .auth-login-right-wrap .auth-login-right-box .auth-login-form-wrap .auth-login-box .login-input::placeholder {
   font-weight: 400;
   text-transform: capitalize;
   color: var(--text-color);
-  font-family: "Avenir Next", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 .auth-login-wrap .auth-login-right-wrap .auth-login-right-box .auth-login-form-wrap .auth-login-box .login-input-active {
   border: 0.2rem solid var(--light-green-color);
@@ -149,6 +151,7 @@
   font-size: 12px;
   letter-spacing: 0.1em;
   color: #39cdcc;
+  cursor: pointer;
 }
 .auth-login-wrap .auth-login-right-wrap .auth-login-right-box .login-btn-wrap {
   margin-top: 2rem;

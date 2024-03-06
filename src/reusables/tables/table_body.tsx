@@ -1,8 +1,15 @@
 import React from "react";
 import { Status, TableProps } from "../../dashboard/utilitites/types";
 import EllipsisIcon from "../../assets/icons/ellipsis.svg";
+import ActionDrop from "./action_drop";
+import { useOnClickOutside } from "../../dashboard/utilitites/helpers";
 
 const TableBody = ({ one, two, three, four, five, status }: TableProps) => {
+  const { ref, visibilityStates, anyVisible, toggleVisibility } =
+    useOnClickOutside({
+      action_drop: false,
+    });
+
   const getStatusClassName = (status: Status) => {
     switch (status) {
       case "pending":
@@ -33,7 +40,16 @@ const TableBody = ({ one, two, three, four, five, status }: TableProps) => {
             {status}
           </p>
         </div>
-        <img className="ellipsis-icon" src={EllipsisIcon} alt="ellipsis_icon" />
+        <img
+          onClick={() => toggleVisibility("action_drop")}
+          className="ellipsis-icon"
+          src={EllipsisIcon}
+          alt="ellipsis_icon"
+        />
+
+        {/* action dropdown wrap start */}
+        <ActionDrop actionRef={ref} isVisible={visibilityStates.action_drop} />
+        {/* action dropdown wrap end */}
       </div>
       {/* table body box end */}
     </div>

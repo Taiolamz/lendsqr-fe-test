@@ -1,7 +1,7 @@
 .auth-login-wrap {
   background: var(--white-color);
   display: flex;
-
+  font-family: "Avenir Next", sans-serif;
   .auth-login-left-wrap {
     background: var(--white-shade-color);
     min-width: 50vw;
@@ -73,6 +73,7 @@
       .login-sub-text {
         font-weight: 400;
         font-size: 20px;
+        margin-top: 1rem;
       }
       .auth-login-form-wrap {
         display: flex;
@@ -104,7 +105,7 @@
               font-weight: 400;
               text-transform: capitalize;
               color: var(--text-color);
-              font-family: "Avenir Next", sans-serif;
+              font-family: "Work Sans", sans-serif;
             }
           }
 
@@ -150,6 +151,7 @@
         font-size: 12px;
         letter-spacing: 0.1em;
         color: #39cdcc;
+        cursor: pointer;
       }
       .login-btn-wrap {
         margin-top: 2rem;
