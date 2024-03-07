@@ -24,6 +24,11 @@
   display: flex;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  .dashboard-table-wrap .table-head-wrap .table-head-box .table-head-group {
+    display: none;
+  }
+}
 .dashboard-table-wrap .table-head-wrap .table-head-box .table-name {
   font-weight: 600;
   font-size: 1.2rem;
@@ -60,20 +65,17 @@
   border-radius: 8px;
   padding: 1.5rem;
   color: var(--text-color);
+  font-family: "Work Sans";
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .filter-input::-moz-placeholder {
-  font-family: "Work Sans", sans-serif;
-  color: rgba(84, 95, 125, 0.7);
-  font-weight: 400;
-  font-size: 1.4rem;
+  font-family: "Work Sans";
   text-transform: capitalize;
+  color: rgba(84, 95, 125, 0.7);
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .filter-input::placeholder {
-  font-family: "Work Sans", sans-serif;
-  color: rgba(84, 95, 125, 0.7);
-  font-weight: 400;
-  font-size: 1.4rem;
+  font-family: "Work Sans";
   text-transform: capitalize;
+  color: rgba(84, 95, 125, 0.7);
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .date-wrap {
   position: relative;
@@ -87,6 +89,12 @@
   position: absolute;
   right: 0;
   padding-right: 2rem;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .date-wrap .calender-icon {
+    display: none;
+  }
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .drop-select-wrap > *:nth-child(3) {
   border: 0.1rem solid rgba(33, 63, 125, 0.2);
@@ -96,8 +104,11 @@
   font-weight: 400;
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .drop-select-wrap > *:nth-child(3) {
-  padding: 0.3rem;
   border-radius: 0.7rem;
+  padding: 0.5rem;
+}
+.dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .drop-select-wrap > *:nth-child(3) > * > *:not(:last-child) {
+  color: rgb(84, 95, 125);
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .drop-select-wrap > *:nth-child(3) > * > *:not(:last-child) > * {
   color: #ffffff !important;
@@ -105,6 +116,11 @@
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .drop-btn-wrap {
   display: flex;
   gap: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .dashboard-table-wrap .table-head-wrap .table-drop-wrap .drop-btn-wrap {
+    flex-direction: column;
+  }
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .drop-btn-wrap .reset-btn {
   padding: 1.2rem 2.5rem;
@@ -142,6 +158,20 @@
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   position: relative;
   align-items: center;
+}
+.dashboard-table-wrap .table-body-wrap .table-row .table-row-header-wrap {
+  display: none;
+}
+.dashboard-table-wrap .table-body-wrap .table-row .table-row-header-wrap .table-row-header {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .dashboard-table-wrap .table-body-wrap .table-row .table-row-header-wrap {
+    display: grid;
+    grid-template-columns: 0.8fr 0.5fr;
+  }
 }
 .dashboard-table-wrap .table-body-wrap .table-row p {
   font-weight: 400;
@@ -222,12 +252,47 @@
   border-bottom: 0.1rem solid var(--border-color);
   padding-bottom: 2rem;
 }
+@media screen and (max-width: 768px) {
+  .dashboard-table-wrap {
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .dashboard-table-wrap .table-head-wrap {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-table-wrap .table-head-wrap .table-drop-wrap {
+    width: 100%;
+  }
+  .dashboard-table-wrap .table-body-wrap .table-row {
+    grid-template-columns: 1fr;
+    grid-gap: 0.7rem;
+    padding-top: 1rem;
+  }
+  .dashboard-table-wrap .table-body-wrap .table-row .action-drop-wrap {
+    right: 0.5rem;
+    top: 2rem;
+  }
+}
+.dashboard-table-wrap .mobile-filter-icon {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .dashboard-table-wrap .mobile-filter-icon {
+    display: flex;
+  }
+}
 
 .pagination-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .pagination-wrap {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 .pagination-wrap .paginate-left-wrap {
   display: flex;

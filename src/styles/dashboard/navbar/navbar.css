@@ -37,8 +37,9 @@
     gap: 1rem;
     align-items: flex-start;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-10px);
-    transition: opacity 0.3s, transform 0.3s;
+    transition: 0.3s;
     padding-left: 4rem;
   }
 }
@@ -157,5 +158,6 @@
 }
 .nav-container .show-navbar-wrap {
   opacity: 1;
+  visibility: visible;
   transform: translateY(0);
 }/*# sourceMappingURL=navbar.css.map */

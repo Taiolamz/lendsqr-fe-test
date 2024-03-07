@@ -1,14 +1,14 @@
 import React from "react";
 import "../styles/reusables/button.css";
 
-interface BtnProp {
+type BtnProp = {
   label: string;
   className?: string;
   style?: React.CSSProperties;
   onClick?: (e?: React.FormEvent<HTMLFormElement>) => void;
   type: "submit" | "reset" | "button";
   active?: boolean;
-}
+};
 
 const Button: React.FC<BtnProp> = ({
   label,

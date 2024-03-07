@@ -40,11 +40,11 @@ export const reactSelectStyle = ({
     border: border,
     fontWeight: "500",
     fontSize: "1.4rem",
-    color: "rgba(33, 63, 125, 1)",
+    color: "color: rgba(84, 95, 125, 0.7)",
 
     placeholder: (provided: any) => ({
       ...provided,
-      color: "red",
+      color: " rgba(84, 95, 125, 0.7)",
     }),
   }),
   singleValue: (provided: any) => ({

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import Cards from "../../reusables/cards";
 import TableContainer from "../../reusables/tables";
 import TableBody from "../../reusables/tables/table_body";
@@ -10,11 +10,14 @@ import RootState from "../../redux/types";
 import NoDataImg from "../../assets/images/no-data.png";
 import { formatDate } from "../utilitites/helpers";
 import { useNavigate } from "react-router";
+import FilterIcon from "../../assets/icons/filter-results-button.svg";
+import { ActionContext } from "../../context/action-context";
 
 const Users = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { users, loading } = useSelector((state: RootState) => state.users);
+  const actionCtx = useContext(ActionContext);
   useEffect(() => {
     dispatch(getUserDetails() as any);
   }, []);
@@ -24,7 +27,10 @@ const Users = () => {
     localStorage.setItem("user_details", paramToString);
     navigate("/dashboard-users-details");
   };
-
+  const handleFilterDrop = () => {
+    actionCtx.setIsFilterDrop(!actionCtx.isFilterDrop);
+    console.log(actionCtx.isFilterDrop);
+  };
   return (
     <div className="dashboard-users-wrap">
       {/* title wrap start */}
@@ -37,6 +43,12 @@ const Users = () => {
 
       {/* table wrap start */}
       <TableContainer tableHeadData={user_table_head_list}>
+        <img
+          className="mobile-filter-icon"
+          src={FilterIcon}
+          alt="filter_icon"
+          onClick={handleFilterDrop}
+        />
         {users.length > 0 ? (
           users.map((chi: any, idx: any) => {
             const {
@@ -58,6 +70,13 @@ const Users = () => {
                 status={"active"}
                 loading={loading}
                 onRoute={() => handleGetSingleUser(chi)}
+                //for mobile view
+                header_one={user_table_head_list[0]}
+                header_two={user_table_head_list[1]}
+                header_three={user_table_head_list[2]}
+                header_four={user_table_head_list[3]}
+                header_five={user_table_head_list[4]}
+                header_six={user_table_head_list[5]}
               />
             );
           })

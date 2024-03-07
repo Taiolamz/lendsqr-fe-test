@@ -27,6 +27,12 @@ interface TableProps {
   activePage?: string;
   children?: ReactNode;
   onRoute?: (e: string) => void;
+  header_one?: string;
+  header_two?: string;
+  header_three?: string;
+  header_four?: string;
+  header_five?: string;
+  header_six?: string;
 }
 
 interface UserDetailsPersonalInfoProp {

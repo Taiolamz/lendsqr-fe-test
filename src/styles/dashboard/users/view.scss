@@ -8,6 +8,7 @@
     gap: 1rem;
     align-items: center;
     cursor: pointer;
+
     .user-view-label {
       font-weight: 400;
       font-size: 1.6rem;
@@ -20,20 +21,30 @@
     }
   }
 
-  .user-details-btn-wrap {
+  .user-details-mid-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     .user-detail-header {
       font-weight: 500;
       font-size: 2.4rem;
       color: var(--dark-blue-color);
     }
-    .user-details-right-wrap {
+    .user-details-btn-wrap {
       display: flex;
       gap: 2rem;
       align-items: center;
+      @media screen and (max-width: 768px) {
+        margin-top: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
       p {
         font-size: 1.4rem;
         font-weight: 600;
@@ -59,15 +70,24 @@
     border: 1px solid var(--card-border-color);
     box-shadow: var(--dashboard-box-shadow);
     border-radius: 0.4rem;
+
     .user-profile-container {
       display: flex;
       gap: 4rem;
       align-items: center;
       padding-bottom: 3.5rem;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
       .user-profile-wrap {
         display: flex;
         align-items: center;
         gap: 2.5rem;
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+          text-align: center;
+        }
         .user-avatar-wrap {
           display: flex;
           justify-content: center;
@@ -142,6 +162,13 @@
       padding-right: 5rem;
       cursor: pointer;
 
+      @media screen and (max-width: 768px) {
+        position: relative;
+        gap: 1rem;
+        align-items: center;
+        flex-direction: column;
+      }
+
       .user-tab-box {
         width: 18rem;
         font-size: 1.6rem;
@@ -154,6 +181,8 @@
     }
   }
   .more-user-datail-info-wrap {
+    
+    overflow-x: scroll;
     padding: 3.5rem;
     background: var(--white-color);
     border: 1px solid var(--card-border-color);
@@ -181,23 +210,43 @@
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 4rem;
+
+          @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+          }
           .detail-sub-info-box {
             display: flex;
             flex-direction: column;
             gap: 1rem;
 
+            @media screen and (max-width: 768px) {
+              grid-template-columns: 1fr;
+            }
             .info-box-label {
               font-size: 1.2rem;
               text-transform: uppercase;
             }
             .remove-capitalize {
               text-transform: lowercase !important;
+              @media screen and (max-width: 768px) {
+                font-size: 1.3rem !important;
+                text-transform: lowercase !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+              }
             }
             .info-box-value {
               font-weight: 500;
               font-size: 1.6rem;
               text-transform: capitalize;
             }
+          }
+        }
+        .detail-sub-info-wrap-length {
+          grid-template-columns: repeat(5, 1fr);
+          @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
           }
         }
       }

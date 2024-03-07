@@ -73,9 +73,9 @@ const ViewUsers = () => {
       </div>
 
       {/* user detail btn wrap start */}
-      <div className="user-details-btn-wrap">
+      <div className="user-details-mid-wrap">
         <p className="user-detail-header">User Details</p>
-        <div className="user-details-right-wrap">
+        <div className="user-details-btn-wrap">
           <p>Blacklist User</p>
           <p>Activate User</p>
         </div>
@@ -166,11 +166,9 @@ const ViewUsers = () => {
                 <p className="info-title">{title}</p>
                 {/* sub-info wrap start */}
                 <div
-                  className="detail-sub-info-wrap"
-                  style={{
-                    gridTemplateColumns:
-                      idx === 1 ? "repeat(4, 1fr)" : "repeat(5, 1fr",
-                  }}
+                  className={`detail-sub-info-wrap ${
+                    idx !== 1 ? "detail-sub-info-wrap-length" : ""
+                  }`}
                 >
                   {sub_info.map((child, indx) => {
                     const { label, value } = child;

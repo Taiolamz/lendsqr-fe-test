@@ -35,8 +35,9 @@
       align-items: flex-start;
       // overflow: hidden;
       opacity: 0;
+      visibility: hidden;
       transform: translateY(-10px);
-      transition: opacity 0.3s, transform 0.3s;
+      transition:  0.3s;
       padding-left: 4rem;
     }
 
@@ -155,6 +156,7 @@
 
   .show-navbar-wrap {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
   }
 }

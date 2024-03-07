@@ -5,6 +5,11 @@
   justify-content: space-between;
   margin-top: 3rem;
 }
+@media screen and (max-width: 768px) {
+  .dashboard-card-wrap {
+    flex-direction: column;
+  }
+}
 .dashboard-card-wrap .dashboard-card-box {
   width: 100%;
   padding: 3.5rem;
