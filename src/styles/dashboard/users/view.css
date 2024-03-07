@@ -35,6 +35,12 @@
   font-size: 2.4rem;
   color: var(--dark-blue-color);
 }
+@media screen and (max-width: 768px) {
+  .user-details-view-wrap .user-details-mid-wrap .user-detail-header {
+    margin: auto;
+    justify-content: center;
+  }
+}
 .user-details-view-wrap .user-details-mid-wrap .user-details-btn-wrap {
   display: flex;
   gap: 2rem;
@@ -42,9 +48,11 @@
 }
 @media screen and (max-width: 768px) {
   .user-details-view-wrap .user-details-mid-wrap .user-details-btn-wrap {
-    margin-top: 0.5rem;
+    padding-top: 2rem;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
   }
 }
 .user-details-view-wrap .user-details-mid-wrap .user-details-btn-wrap p, .user-details-view-wrap .user-details-mid-wrap .user-details-btn-wrap :nth-child(2) {

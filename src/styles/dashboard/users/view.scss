@@ -35,15 +35,23 @@
       font-weight: 500;
       font-size: 2.4rem;
       color: var(--dark-blue-color);
+      @media screen and (max-width: 768px) {
+        // align-items: center;
+        margin: auto;
+        justify-content: center;
+      }
     }
     .user-details-btn-wrap {
       display: flex;
       gap: 2rem;
       align-items: center;
       @media screen and (max-width: 768px) {
-        margin-top: 0.5rem;
+        padding-top: 2rem;
         flex-direction: column;
-        align-items: flex-start;
+        // align-items: flex-start;
+        align-items: center;
+        margin: auto;
+        justify-content: center;
       }
       p {
         font-size: 1.4rem;
@@ -181,7 +189,6 @@
     }
   }
   .more-user-datail-info-wrap {
-    
     overflow-x: scroll;
     padding: 3.5rem;
     background: var(--white-color);
