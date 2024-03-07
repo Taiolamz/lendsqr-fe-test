@@ -9,7 +9,7 @@
 }
 .dashboard-table-wrap .table-head-wrap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   align-items: center;
   text-align: left;
   margin-bottom: 2rem;
@@ -139,7 +139,7 @@
 .dashboard-table-wrap .table-body-wrap .table-row {
   display: grid;
   padding-top: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   position: relative;
   align-items: center;
 }
@@ -147,9 +147,16 @@
   font-weight: 400;
   font-size: 1.4rem;
   text-transform: capitalize;
+  padding-right: 5rem;
 }
 .dashboard-table-wrap .table-body-wrap .table-row .email-text {
   text-transform: lowercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dashboard-table-wrap .table-body-wrap .table-row .date-text {
+  width: 18rem;
 }
 .dashboard-table-wrap .table-body-wrap .table-row .status-wrap {
   display: inline-flex;

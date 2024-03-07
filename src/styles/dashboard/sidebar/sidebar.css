@@ -13,6 +13,11 @@
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
+@media screen and (max-width: 768px) {
+  .sidebar-wrap {
+    top: 1.5rem;
+  }
+}
 .sidebar-wrap::-webkit-scrollbar {
   width: 8px;
 }
@@ -34,6 +39,12 @@
   cursor: pointer;
   padding: 3rem;
   padding-bottom: unset;
+}
+@media screen and (max-width: 768px) {
+  .sidebar-wrap .sidebar-top-wrap {
+    padding: 4rem 1.5rem;
+    padding-bottom: unset;
+  }
 }
 .sidebar-wrap .sidebar-top-wrap .switch-org-text {
   font-weight: 400;

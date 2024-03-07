@@ -16,22 +16,30 @@
     display: none;
   }
 }
+.auth-login-wrap .logo-wrap {
+  position: absolute;
+  top: 0;
+}
 .auth-login-wrap .logo-wrap .logo-box {
-  padding: 12rem;
+  padding: 8rem;
   padding-bottom: unset;
 }
 .auth-login-wrap .pablo-img {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto;
+  padding-top: 2rem;
 }
 .auth-login-wrap .auth-login-right-wrap {
-  background-color: var(--white-color);
-  min-width: 50vw;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+  background: var(--white-color);
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .auth-login-wrap .auth-login-right-wrap {
+    min-width: 50vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .auth-login-wrap .auth-login-right-wrap .auth-login-right-box {
   gap: 7rem;

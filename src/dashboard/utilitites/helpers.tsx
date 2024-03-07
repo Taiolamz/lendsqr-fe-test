@@ -123,3 +123,19 @@ export const useOnClickOutside = <T extends HTMLElement>(
 
   return { ref, visibilityStates, anyVisible, toggleVisibility };
 };
+
+export function formatDate(dateString: string) {
+  const date = new Date(dateString);
+
+  const options: any = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+    hourCycle: "h12",
+  };
+
+  return date.toLocaleString("en-US", options);
+}

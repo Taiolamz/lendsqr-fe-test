@@ -13,6 +13,10 @@
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 
+  @media screen and (max-width: 768px) {
+    top: 1.5rem;
+  }
+
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -38,6 +42,12 @@
     cursor: pointer;
     padding: 3rem;
     padding-bottom: unset;
+
+    @media screen and (max-width: 768px) {
+      padding: 4rem 1.5rem ;
+      padding-bottom: unset;
+    }
+
     .switch-org-text {
       font-weight: 400;
       font-size: 1.6rem;
@@ -131,9 +141,6 @@
             width: 100%;
           }
 
-          //   .sub-icons {
-          //     // width: 1.3rem;
-          //   }
           .span-bg {
             position: absolute;
             height: 100%;
@@ -146,7 +153,6 @@
       }
       .sub-list-box-active {
         background-color: var(--transparent-green-color);
-        // opacity: 0.1;
 
         &::after {
           display: none;

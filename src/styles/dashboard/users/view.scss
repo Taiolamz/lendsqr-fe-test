@@ -80,6 +80,11 @@
             width: 27.92px;
             height: 29.3px;
           }
+          .user-display-img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+          }
         }
         .user-detail-info {
           display: flex;
@@ -186,7 +191,7 @@
               text-transform: uppercase;
             }
             .remove-capitalize {
-              text-transform: none !important;
+              text-transform: lowercase !important;
             }
             .info-box-value {
               font-weight: 500;

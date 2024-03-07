@@ -5,10 +5,9 @@ import TableFilterDrop from "./filter_drop";
 import { useOnClickOutside } from "../../dashboard/utilitites/helpers";
 
 const TableHeader: React.FC<TableProps> = ({ tableHeadData }) => {
-  const { ref, visibilityStates, anyVisible, toggleVisibility } =
-    useOnClickOutside({
-      filter_drop: false,
-    });
+  const { ref, visibilityStates, toggleVisibility } = useOnClickOutside({
+    filter_drop: false,
+  });
 
   return (
     <div>

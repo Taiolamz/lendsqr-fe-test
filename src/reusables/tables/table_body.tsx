@@ -3,12 +3,22 @@ import { Status, TableProps } from "../../dashboard/utilitites/types";
 import EllipsisIcon from "../../assets/icons/ellipsis.svg";
 import ActionDrop from "./action_drop";
 import { useOnClickOutside } from "../../dashboard/utilitites/helpers";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
-const TableBody = ({ one, two, three, four, five, status }: TableProps) => {
-  const { ref, visibilityStates, anyVisible, toggleVisibility } =
-    useOnClickOutside({
-      action_drop: false,
-    });
+const TableBody = ({
+  one,
+  two,
+  three,
+  four,
+  five,
+  status,
+  loading,
+  onRoute,
+}: TableProps) => {
+  const { ref, visibilityStates, toggleVisibility } = useOnClickOutside({
+    action_drop: false,
+  });
 
   const getStatusClassName = (status: Status) => {
     switch (status) {
@@ -26,19 +36,27 @@ const TableBody = ({ one, two, three, four, five, status }: TableProps) => {
     <div className="table-body-wrap">
       {/* table body box start */}
       <div className={`table-row`}>
-        <p>{one}</p>
-        <p>{two}</p>
-        <p className="email-text">{three}</p>
-        <p>{four}</p>
-        <p>{five}</p>
+        <p>{loading ? <Skeleton width={100} height={`30%`} /> : one}</p>
+        <p>{loading ? <Skeleton width={100} height={`30%`} /> : two}</p>
+        <p className="email-text">
+          {loading ? <Skeleton width={100} height={`30%`} /> : three}
+        </p>
+        <p>{loading ? <Skeleton width={100} height={`30%`} /> : four}</p>
+        <p className="date-text">
+          {loading ? <Skeleton width={100} height={`30%`} /> : five}
+        </p>
         <div className="status-wrap">
-          <p
-            className={`inactive-status-text ${getStatusClassName(
-              status as Status
-            )}`}
-          >
-            {status}
-          </p>
+          {loading ? (
+            <Skeleton width={100} height={`80%`} />
+          ) : (
+            <p
+              className={`inactive-status-text ${getStatusClassName(
+                status as Status
+              )}`}
+            >
+              {status}
+            </p>
+          )}
         </div>
         <img
           onClick={() => toggleVisibility("action_drop")}
@@ -48,7 +66,11 @@ const TableBody = ({ one, two, three, four, five, status }: TableProps) => {
         />
 
         {/* action dropdown wrap start */}
-        <ActionDrop actionRef={ref} isVisible={visibilityStates.action_drop} />
+        <ActionDrop
+          onRoute={onRoute}
+          actionRef={ref}
+          isVisible={visibilityStates.action_drop}
+        />
         {/* action dropdown wrap end */}
       </div>
       {/* table body box end */}

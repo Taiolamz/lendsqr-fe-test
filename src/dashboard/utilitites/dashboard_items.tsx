@@ -5,7 +5,11 @@ import SavingsUserIcon from "../../assets/icons/savings-users.svg";
 import ViewIcon from "../../assets/icons/np_view_1214519_000000 1.svg";
 import BlackListIcon from "../../assets/icons/np_delete-friend_3248001_000000 1.svg";
 import ActivateUserIcon from "../../assets/icons/np_user_2995993_000000 1.svg";
-import { TableBodyItems, UserListItem } from "./types";
+import {
+  TableBodyItems,
+  UserDetailsPersonalInfoProp,
+  UserListItem,
+} from "./types";
 import { formatNumberWithCommas, numberWithCommasAndDecimals } from "./helpers";
 
 export const user_list: UserListItem[] = [
@@ -160,7 +164,7 @@ export const dropItems = [
     click: "/dashboard-users-details",
   },
   {
-    label: "Blacklist Usear",
+    label: "Blacklist User",
     logo: BlackListIcon,
     click: "",
   },
@@ -180,41 +184,66 @@ export const user_tabs: string[] = [
   "App and System",
 ];
 
-export const user_details_personal_info = [
+export const UserDetailsPersonalInfo = ({
+  full_name,
+  phone_number,
+  email,
+  bvn,
+  gender,
+  marital_status,
+  children,
+  type_of_residence,
+  education_level,
+  employment_status,
+  employment_sector,
+  employment_duration,
+  official_email,
+  monthly_currency_id,
+  monthly_income_start_range,
+  monthly_income_end_range,
+  loan_amount,
+  twitter,
+  facebook,
+  instagram,
+  guarantor_fullname,
+  guarantor_phone,
+  guarantor_email,
+  guarantor_relationship,
+}: UserDetailsPersonalInfoProp) => [
   {
     title: "personal information",
     sub_info: [
       {
         label: "full name",
-        value: "Hassan Lamidi",
+        value: full_name,
       },
       {
         label: "phone number",
-        value: "07060780922",
+        value: phone_number,
       },
       {
         label: "email",
-        value: "grace@gmail.com",
+        value: email,
       },
       {
         label: "bvn",
-        value: "07060780922",
+        value: bvn,
       },
       {
         label: "gender",
-        value: "female",
+        value: gender,
       },
       {
         label: "marital status",
-        value: "single",
+        value: marital_status,
       },
       {
         label: "children",
-        value: "none",
+        value: children,
       },
       {
         label: "type of residence",
-        value: "parent's apartment",
+        value: type_of_residence,
       },
     ],
   },
@@ -223,33 +252,35 @@ export const user_details_personal_info = [
     sub_info: [
       {
         label: "level of education",
-        value: "B.Sc",
+        value: education_level,
       },
       {
         label: "employment status",
-        value: "employed",
+        value: employment_status,
       },
       {
         label: "sector of employment",
-        value: "FinTech",
+        value: employment_sector,
       },
       {
         label: "duration of employment",
-        value: "2 years",
+        value: employment_duration,
       },
       {
         label: "official email",
-        value: "hlamidi@lendsqr.com",
+        value: official_email,
       },
       {
         label: "monthly income",
-        value: `₦${numberWithCommasAndDecimals(
-          20000000
-        )}-₦${numberWithCommasAndDecimals(400000)}`,
+        value: `${monthly_currency_id}${numberWithCommasAndDecimals(
+          Number(monthly_income_start_range)
+        )}-${monthly_currency_id}${numberWithCommasAndDecimals(
+          Number(monthly_income_end_range)
+        )}`,
       },
       {
         label: "loan repayment",
-        value: `${formatNumberWithCommas(40000)}`,
+        value: `${formatNumberWithCommas(Number(loan_amount))}`,
       },
     ],
   },
@@ -258,15 +289,15 @@ export const user_details_personal_info = [
     sub_info: [
       {
         label: "twitter",
-        value: "@onyebuchihassan",
+        value: twitter,
       },
       {
         label: "facebook",
-        value: "hassan lamidi",
+        value: facebook,
       },
       {
         label: "instagram",
-        value: "@taiolamz",
+        value: instagram,
       },
     ],
   },
@@ -275,19 +306,19 @@ export const user_details_personal_info = [
     sub_info: [
       {
         label: "full name",
-        value: "hussein lamidi",
+        value: guarantor_fullname,
       },
       {
         label: "phone_number",
-        value: "08177135933",
+        value: guarantor_phone,
       },
       {
         label: "email address",
-        value: "hlamidi@gmail.com",
+        value: guarantor_email,
       },
       {
         label: "relationship",
-        value: "brother",
+        value: guarantor_relationship,
       },
     ],
   },
@@ -296,19 +327,19 @@ export const user_details_personal_info = [
     sub_info: [
       {
         label: "full name",
-        value: "hussein lamidi",
+        value: guarantor_fullname,
       },
       {
         label: "phone_number",
-        value: "08177135933",
+        value: guarantor_phone,
       },
       {
         label: "email address",
-        value: "hlamidi@gmail.com",
+        value: guarantor_email,
       },
       {
         label: "relationship",
-        value: "brother",
+        value: guarantor_relationship,
       },
     ],
   },

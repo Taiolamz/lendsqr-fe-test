@@ -1,17 +1,69 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RouteBackIcon, StarIcon } from "../../assets/icons/svg";
 import UserStaticIcon from "../../assets/icons/user-static-icon.svg";
 import { numberWithCommasAndDecimals } from "../utilitites/helpers";
 import {
-  user_details_personal_info,
+  UserDetailsPersonalInfo,
   user_tabs,
 } from "../utilitites/dashboard_items";
 import "../../styles/dashboard/users/view.css";
 import { useNavigate } from "react-router";
+import { UserDetails } from "../../redux/types";
+import { UserDetailsPersonalInfoProp } from "../utilitites/types";
 
 const ViewUsers = () => {
+  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("General Details");
+  useEffect(() => {
+    const data = localStorage.getItem("user_details");
+    const parseData = JSON.parse(data as any);
+    if (parseData) {
+      setUserDetails(parseData);
+    }
+  }, []);
+
+  // hardcoded values are absense of relatable data or value
+  const userDetailsInfo = UserDetailsPersonalInfo({
+    full_name: userDetails?.user || "Hassan Lamidi",
+    phone_number: userDetails?.phone_number || "08177135933",
+    email: userDetails?.email || "hassanadefarati@gmail.com",
+    bvn: "08177135933", //couldnt find a perfect value for this :)
+    gender: userDetails?.gender || "Male",
+    marital_status: "Single",
+    children: userDetails?.children || "none",
+    type_of_residence: "Parent's Apartment",
+    education_level: "B.sc",
+    employment_status: "employed",
+    employment_sector: "FinTech",
+    employment_duration: "2 years",
+    official_email: userDetails?.official_email,
+    monthly_currency_id: userDetails?.currencyId || "₦",
+    monthly_income_start_range: "200000",
+    monthly_income_end_range: "400000",
+    loan_amount: "40000",
+    twitter: "@onyebuchihassan",
+    facebook: "Hassan Lamidi",
+    instagram: "@taiolamz",
+    guarantor_fullname: userDetails?.guarantor_name,
+    guarantor_phone: userDetails?.guarantor_num,
+    guarantor_email: userDetails?.email,
+    guarantor_relationship: userDetails?.guarantor_relationship,
+  } as UserDetailsPersonalInfoProp);
+
+  function generateClassName(value: string) {
+    let className = "info-box-value";
+
+    if (
+      typeof value === "string" &&
+      value.includes("@") &&
+      value.includes(".")
+    ) {
+      className += " remove-capitalize";
+    }
+
+    return className;
+  }
 
   return (
     <div className="user-details-view-wrap">
@@ -37,14 +89,20 @@ const ViewUsers = () => {
           <div className="user-profile-wrap">
             <div className="user-avatar-wrap">
               <img
-                className="user-static-icon"
-                src={UserStaticIcon}
+                className={`user-static-icon ${
+                  userDetails?.avatar ? "user-display-img" : ""
+                }`}
+                src={userDetails?.avatar ? userDetails.avatar : UserStaticIcon}
                 alt="user_static_icon"
               />
             </div>
             <div className="user-detail-info">
-              <p className="user-detail-name">Hassan Lamidi</p>
-              <p className="user-ref-num">LSQFf587g90</p>
+              <p className="user-detail-name">
+                {userDetails?.user || "Hassan Lamidi"}
+              </p>
+              <p className="user-ref-num">
+                {userDetails?.reference_number || "LSQFf587g90"}
+              </p>
             </div>
           </div>
           {/* user profile wrap end */}
@@ -66,10 +124,15 @@ const ViewUsers = () => {
 
           {/* user amount details wrap start */}
           <div className="user-amount-details-wrap">
-            <p className="amount">{`₦${numberWithCommasAndDecimals(
-              200000
-            )}`}</p>
-            <p className="bank-name">9912345678/Providus Bank</p>
+            <p className="amount">
+              {`${userDetails?.currencyId}${numberWithCommasAndDecimals(
+                Number(userDetails?.amount)
+              )}` || `₦${numberWithCommasAndDecimals(200000)}`}
+            </p>
+            <p className="bank-name">
+              {`${userDetails?.account_num}/${userDetails?.bank}` ||
+                "9912345678/Providus Bank"}
+            </p>
             {/* user amount details wrap end */}
           </div>
         </div>
@@ -96,7 +159,7 @@ const ViewUsers = () => {
       <div className="more-user-datail-info-wrap">
         {/* personal info wrap start */}
         <div className="personal-info-wrap">
-          {user_details_personal_info.map((chi, idx) => {
+          {userDetailsInfo.map((chi, idx) => {
             const { title, sub_info } = chi;
             return (
               <div key={idx} className="personal-info-box">
@@ -115,11 +178,9 @@ const ViewUsers = () => {
                       <div key={indx} className={`detail-sub-info-box `}>
                         <p className="info-box-label">{label}</p>
                         <p
-                          className={`info-box-value  ${
-                            value.includes("@") && value.includes(".")
-                              ? "remove-capitalize"
-                              : ""
-                          }`}
+                          className={`info-box-value ${generateClassName(
+                            value
+                          )}`}
                         >
                           {value}
                         </p>

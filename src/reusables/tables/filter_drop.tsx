@@ -82,7 +82,6 @@ const TableFilterDrop = ({ isVisible, filterRef }: TableFilterDropProp) => {
     };
     console.log(obj);
   };
-  const [dateSelected, setDateSelected] = useState(false);
   return (
     <div
       ref={filterRef}

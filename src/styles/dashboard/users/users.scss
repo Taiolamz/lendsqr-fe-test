@@ -4,4 +4,20 @@
     font-weight: 500;
     font-size: 2.4rem;
   }
+  .no-data-img-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 5rem;
+    align-items: center;
+    justify-content: center;
+    .no-data-img {
+      width: 20rem;
+    }
+    .img-text {
+      color: var(--dark-blue-color);
+      font-weight: 500;
+      font-size: 2.4rem;
+    }
+  }
 }

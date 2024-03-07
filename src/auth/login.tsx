@@ -14,7 +14,6 @@ interface UserDetails {
 const Login = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [passwordValidate, setPasswordValidate] = useState("");
   const [details, setDetails] = useState<UserDetails>({
     email: "",
     password: "",
@@ -42,16 +41,20 @@ const Login = () => {
     return activeBtn;
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const formData: UserDetails = { ...details };
-    if (activateBtn()) {
+    const obj = { ...details };
+    console.log(obj);
+    if (obj && activateBtn()) {
+      localStorage.setItem("user", JSON.stringify(obj));
       navigate("/dashboard-users");
     }
   };
 
   return (
     <div className="auth-login-wrap">
+ 
+
       {/* left wrap start */}
       <div className="auth-login-left-wrap">
         <div className="logo-wrap">
@@ -59,7 +62,6 @@ const Login = () => {
         </div>
         <img
           className="pablo-img"
-          style={{ width: "100%" }}
           src={PabloSignImg as any}
           alt="pablo_sign_img"
         />

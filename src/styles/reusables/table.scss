@@ -10,7 +10,8 @@
 
   .table-head-wrap {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+
     align-items: center;
     text-align: left;
     margin-bottom: 2rem;
@@ -144,12 +145,11 @@
   .table-body-wrap {
     display: flex;
     flex-direction: column;
-    // margin-top: 3.5rem;
 
     .table-row {
       display: grid;
       padding-top: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
       position: relative;
       align-items: center;
 
@@ -157,10 +157,18 @@
         font-weight: 400;
         font-size: 1.4rem;
         text-transform: capitalize;
+        padding-right: 5rem;
       }
 
       .email-text {
         text-transform: lowercase;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .date-text {
+        width: 18rem;
       }
 
       .status-wrap {

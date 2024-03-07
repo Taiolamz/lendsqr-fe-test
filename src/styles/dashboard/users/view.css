@@ -81,6 +81,11 @@
   width: 27.92px;
   height: 29.3px;
 }
+.user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-profile-wrap .user-avatar-wrap .user-display-img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
 .user-details-view-wrap .user-details-summary-wrap .user-profile-container .user-profile-wrap .user-detail-info {
   display: flex;
   flex-direction: column;
@@ -184,7 +189,7 @@
   text-transform: uppercase;
 }
 .user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap .personal-info-box .detail-sub-info-wrap .detail-sub-info-box .remove-capitalize {
-  text-transform: none !important;
+  text-transform: lowercase !important;
 }
 .user-details-view-wrap .more-user-datail-info-wrap .personal-info-wrap .personal-info-box .detail-sub-info-wrap .detail-sub-info-box .info-box-value {
   font-weight: 500;
