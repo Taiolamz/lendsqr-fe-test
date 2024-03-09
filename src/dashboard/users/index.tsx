@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Cards from "../../reusables/cards";
 import TableContainer from "../../reusables/tables";
 import TableBody from "../../reusables/tables/table_body";
@@ -13,24 +13,48 @@ import { useNavigate } from "react-router";
 import FilterIcon from "../../assets/icons/filter-results-button.svg";
 import { ActionContext } from "../../context/action-context";
 
+
+interface LimitType {
+  label: number;
+  value: number;
+}
+
 const Users = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [limit, setLimit] = useState<LimitType>({ label: 10, value: 10 });
+  const [page, setPage] = useState(1);
   const { users, loading } = useSelector((state: RootState) => state.users);
   const actionCtx = useContext(ActionContext);
+
   useEffect(() => {
-    dispatch(getUserDetails() as any);
-  }, []);
+    const obj = {
+      page: page,
+      limit: limit?.value,
+    };
+    dispatch(getUserDetails(obj) as any);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page, limit]);
 
   const handleGetSingleUser = (param: any) => {
     const paramToString = JSON.stringify(param);
     localStorage.setItem("user_details", paramToString);
     navigate("/dashboard-users-details");
   };
+
   const handleFilterDrop = () => {
     actionCtx.setIsFilterDrop(!actionCtx.isFilterDrop);
-    console.log(actionCtx.isFilterDrop);
+    // console.log(actionCtx.isFilterDrop);
   };
+
+  const handlePaginate = (param: string) => {
+    if (param === "next") {
+      setPage(page + 1);
+    } else if (param === "prev" && page > 1) {
+      setPage(page - 1);
+    }
+  };
+
   return (
     <div className="dashboard-users-wrap">
       {/* title wrap start */}
@@ -42,7 +66,15 @@ const Users = () => {
       {/* cards wrap end */}
 
       {/* table wrap start */}
-      <TableContainer tableHeadData={user_table_head_list}>
+      <TableContainer
+        tableHeadData={user_table_head_list}
+        onPrevPage={() => handlePaginate("prev")}
+        onNextPage={() => handlePaginate("next")}
+        perPage={limit as any}
+        setPerPage={(e) => setLimit(e)}
+        totalLength={users.length}
+        totalLengthArray={users?.length}
+      >
         <img
           className="mobile-filter-icon"
           src={FilterIcon}
@@ -90,6 +122,22 @@ const Users = () => {
             <p className="img-text">No User Data</p>
           </div>
         )}
+        {/* <ReactPaginate
+          previousLabel="previous"
+          nextLabel="next"
+          breakLabel={"..."}
+          pageCount={25}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={3}
+          onPageChange={handlePageClick}
+          containerClassName=""
+          pageClassName=""
+          pageLinkClassName=""
+          nextClassName=""
+          nextLinkClassName=""
+          breakClassName=""
+          breakLinkClassName=""
+        /> */}
       </TableContainer>
       {/* table wrap end */}
     </div>

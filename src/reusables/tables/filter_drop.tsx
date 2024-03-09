@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Select from "react-select";
 import { reactSelectStyle } from "../../dashboard/utilitites/helpers";
 import Button from "../button";
-import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
 import moment from "moment";
 import {
@@ -10,6 +9,7 @@ import {
   statusOptions,
 } from "../../dashboard/utilitites/dashboard_items";
 import CalenderIcon from "../../assets/icons/np_calendar_2080577_000000 1.svg";
+import DatePicker from "react-flatpickr";
 
 interface FilterType {
   organization: string;
@@ -22,7 +22,7 @@ interface FilterType {
 
 interface TableFilterDropProp {
   isVisible: boolean;
-  filterRef: React.RefObject<HTMLDivElement>;
+  filterRef?: React.RefObject<HTMLDivElement>;
 }
 
 const TableFilterDrop = ({ isVisible, filterRef }: TableFilterDropProp) => {
@@ -92,12 +92,8 @@ const TableFilterDrop = ({ isVisible, filterRef }: TableFilterDropProp) => {
         <div className="table-drop-box" key={key}>
           <label htmlFor={key}>{key}</label>
           {key === "date" ? (
-            <div
-              className="date-wrap"
-              ref={filterRef}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Flatpickr
+            <div className="date-wrap">
+              <DatePicker
                 id={key}
                 name={key}
                 className="filter-input date-input"

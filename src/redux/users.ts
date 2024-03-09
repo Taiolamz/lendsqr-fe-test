@@ -3,11 +3,21 @@ import { toast } from "react-toastify";
 import axios from "../utils/axios";
 import { UserDetailsState } from "./types";
 
+export interface UserDetailsPayload {
+  page?: number;
+  limit?: number;
+}
+
+// my mockapi data wasn't able to spool up to 500 records, had
+// a limit of 100 records using mockapi.io
 export const getUserDetails = createAsyncThunk(
   "lendsqr_fe_test",
-  async (_, thunkAPI) => {
+  async (payload: UserDetailsPayload, thunkAPI) => {
     try {
-      const response = await axios.get("/lendsqr_fe_test");
+      const { page, limit } = payload;
+      const response = await axios.get(
+        `/lendsqr_fe_test?page=${page || ""}&limit=${limit || ""}`
+      );
       const data = response.data;
       if (!data) {
         toast.error("Error", {
@@ -28,7 +38,6 @@ export const getUserDetails = createAsyncThunk(
     }
   }
 );
-
 const initialState: UserDetailsState = {
   loading: false,
   users: [],

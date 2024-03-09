@@ -89,7 +89,7 @@
   position: absolute;
   right: 0;
   padding-right: 2rem;
-  display: none;
+  display: flex;
 }
 @media screen and (max-width: 768px) {
   .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .date-wrap .calender-icon {

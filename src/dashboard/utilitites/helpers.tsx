@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
+
 export function formatNumberWithCommas(number: number) {
   let numberString = number.toString();
   let characters = numberString.split("");
@@ -74,12 +75,12 @@ interface VisibilityState {
   [itemName: string]: boolean;
 }
 
-export const useOnClickOutside = <T extends HTMLElement>(
+export const useOnClickOutside = (
   initialVisible: VisibilityState = {}
 ) => {
+  const ref = useRef<HTMLImageElement>(null);
   const [visibilityStates, setVisibilityStates] =
     useState<VisibilityState>(initialVisible);
-  const ref = useRef<T | null | any>(null);
 
   const handleClickOutside = (event: MouseEvent, itemName: string) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {

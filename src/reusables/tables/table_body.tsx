@@ -1,13 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Status, TableProps } from "../../dashboard/utilitites/types";
 import EllipsisIcon from "../../assets/icons/ellipsis.svg";
 import ActionDrop from "./action_drop";
 import { useOnClickOutside } from "../../dashboard/utilitites/helpers";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import FilterIcon from "../../assets/icons/filter-results-button.svg";
-import TableFilterDrop from "./filter_drop";
-import { ActionContext } from "../../context/action-context";
+
 
 const TableBody = ({
   one,
@@ -46,7 +44,7 @@ const TableBody = ({
 
   return (
     <>
-      <div className="table-body-wrap">
+      <div className="table-body-wrap" ref={ref}>
         {/* table body box start */}
         <div className={`table-row`}>
           {/* table row header wrap (mobile view) start */}
@@ -116,11 +114,14 @@ const TableBody = ({
               </p>
             )}
           </div>
+
+          {/* toggle the action dropdown */}
           <img
             onClick={() => toggleVisibility("action_drop")}
             className="ellipsis-icon"
             src={EllipsisIcon}
             alt="ellipsis_icon"
+            ref={ref}
           />
 
           {/* action dropdown wrap start */}

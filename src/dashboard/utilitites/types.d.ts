@@ -16,6 +16,12 @@ interface TableBodyItems {
 }
 
 interface TableProps {
+  onPrevPage?: () => void;
+  onNextPage?: () => void;
+  perPage?: number;
+  totalLengthArray?: number;
+  setPerPage?: (e) => void;
+  totalLength?: number;
   loading?: boolean;
   tableHeadData?: string[];
   one?: string;
@@ -33,6 +39,11 @@ interface TableProps {
   header_four?: string;
   header_five?: string;
   header_six?: string;
+}
+
+interface PageOptions {
+  label: number;
+  value: number;
 }
 
 interface UserDetailsPersonalInfoProp {

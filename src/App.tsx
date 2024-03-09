@@ -6,7 +6,6 @@ import Layout from "./dashboard/layout";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { Helmet } from "react-helmet";
-import Logo from "./assets/images/lendsqrLogo.svg";
 
 function App() {
   return (

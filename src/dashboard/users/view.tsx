@@ -43,7 +43,7 @@ const ViewUsers = () => {
     monthly_income_end_range: "400000",
     loan_amount: "40000",
     twitter: "@onyebuchihassan",
-    facebook: "Hassan Lamidi",
+    facebook: userDetails?.user || "Hassan Lamidi",
     instagram: "@taiolamz",
     guarantor_fullname: userDetails?.guarantor_name,
     guarantor_phone: userDetails?.guarantor_num,

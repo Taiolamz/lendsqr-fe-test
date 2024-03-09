@@ -3,7 +3,6 @@ import BriefcaseIcon from "../../assets/icons/briefcase 1.svg";
 import { dropdownArrow } from "../../assets/icons/svg";
 import { sidebar_list } from "../utilitites/sidebar";
 import "../../styles/dashboard/sidebar/sidebar.css";
-import { FiSidebar } from "react-icons/fi";
 import { FaArrowsTurnRight } from "react-icons/fa6";
 import { useState } from "react";
 

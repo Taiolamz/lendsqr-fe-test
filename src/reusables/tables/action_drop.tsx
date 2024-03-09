@@ -2,8 +2,8 @@ import React from "react";
 import { dropItems } from "../../dashboard/utilitites/dashboard_items";
 
 interface ActionDropProp {
-  isVisible: boolean;
-  actionRef: React.RefObject<HTMLDivElement>;
+  isVisible?: boolean;
+  actionRef?: React.RefObject<HTMLDivElement>;
   onRoute?: (click: string) => void;
 }
 
