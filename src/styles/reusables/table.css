@@ -35,6 +35,8 @@
   text-transform: uppercase;
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap {
+  height: 40rem;
+  overflow-y: scroll;
   position: absolute;
   z-index: 1;
   top: 3rem;
@@ -50,6 +52,26 @@
   visibility: hidden;
   opacity: 0;
   transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.dashboard-table-wrap .table-head-wrap .table-drop-wrap::-webkit-scrollbar:horizontal {
+  display: none;
+}
+.dashboard-table-wrap .table-head-wrap .table-drop-wrap::-webkit-scrollbar {
+  width: 0.6rem;
+}
+.dashboard-table-wrap .table-head-wrap .table-drop-wrap::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+.dashboard-table-wrap .table-head-wrap .table-drop-wrap::-webkit-scrollbar-thumb {
+  background: var(--light-green-color);
+  border-radius: 30rem;
+}
+.dashboard-table-wrap .table-head-wrap .table-drop-wrap::-webkit-scrollbar-thumb:hover {
+  background: var(--light-green-color);
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box {
   display: flex;
@@ -354,4 +376,35 @@
 }
 .pagination-wrap .paginate-right-wrap .num-wrap .ellipse-text {
   cursor: default;
+}
+.pagination-wrap .paginate-wrap {
+  color: rgba(84, 95, 125, 0.3);
+}
+.pagination-wrap .paginate-wrap .pagination {
+  list-style: none;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 2rem;
+}
+.pagination-wrap .paginate-wrap .pagination .page-num {
+  cursor: pointer;
+  border-radius: 0.3rem;
+  font-weight: 400;
+  transition: 0.1s ease-in-out;
+}
+.pagination-wrap .paginate-wrap .pagination .page-num:hover {
+  color: var(--dark-blue-color);
+}
+.pagination-wrap .paginate-wrap .pagination .active {
+  font-weight: 500;
+  color: var(--dark-blue-color);
+}
+.pagination-wrap .paginate-wrap .pagination .next-btn, .pagination-wrap .paginate-wrap .pagination .prev-btn {
+  background-color: rgba(33, 63, 125, 0.1019607843);
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  color: var(--dark-blue-color);
+  font-weight: 500;
 }/*# sourceMappingURL=table.css.map */

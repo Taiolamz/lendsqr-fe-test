@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-
+import {useEffect, useRef, useState } from "react";
 
 export function formatNumberWithCommas(number: number) {
   let numberString = number.toString();
@@ -75,9 +74,7 @@ interface VisibilityState {
   [itemName: string]: boolean;
 }
 
-export const useOnClickOutside = (
-  initialVisible: VisibilityState = {}
-) => {
+export const useOnClickOutside = (initialVisible: VisibilityState = {}) => {
   const ref = useRef<HTMLImageElement>(null);
   const [visibilityStates, setVisibilityStates] =
     useState<VisibilityState>(initialVisible);

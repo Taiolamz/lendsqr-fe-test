@@ -7,7 +7,9 @@
 }
 @media screen and (max-width: 768px) {
   .dashboard-card-wrap {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust min/max width as needed */
+    gap: 20px; /* Adjust gap between cards */
   }
 }
 .dashboard-card-wrap .dashboard-card-box {

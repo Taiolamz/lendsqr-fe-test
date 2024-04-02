@@ -1,0 +1,173 @@
+.sidebar-wrap {
+  width: 240px;
+  background: var(--white-color);
+  position: fixed;
+  top: 5.2rem;
+  bottom: 0;
+  overflow-y: scroll;
+  z-index: 2;
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.sidebar-wrap::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+.sidebar-wrap::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+.sidebar-wrap::-webkit-scrollbar-thumb {
+  background: transparent; /* Handle color */
+  border-radius: 4px; /* Handle border radius */
+}
+.sidebar-wrap::-webkit-scrollbar-thumb:hover {
+  background: transparent; /* Handle color on hover */
+}
+.sidebar-wrap .sidebar-content {
+  height: 100%;
+  padding: 2rem 1.4rem;
+  padding-top: 1.9rem;
+  overflow-y: auto;
+  display: grid;
+  grid-template-rows: 0.8fr 1fr;
+  transition: all;
+}
+.sidebar-wrap .sidebar-content .sidebar-top-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.sidebar-wrap .sidebar-content .sidebar-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-wrap .sidebar-content .sidebar-box .sidebar-group {
+  align-items: center;
+  padding: 0.8rem 0.4rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  background: var(--primary-blue-color);
+  z-index: 1;
+  transition: 0.3s;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+}
+.sidebar-wrap .sidebar-content .sidebar-box .side-label {
+  font-weight: 600;
+  font-size: 12.8984px;
+}
+.sidebar-wrap .sidebar-content .sidebar-box:hover {
+  font-weight: 600;
+  color: var(--white-color);
+}
+.sidebar-wrap .sidebar-content .side-dropdown-wrap {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-left: 3.7rem;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.sidebar-wrap .sidebar-content .side-dropdown-wrap .side-dropdown-box {
+  font-weight: 500;
+  font-size: 12.6953px;
+  color: #616161;
+  background: var(--lightest-blue);
+}
+.sidebar-wrap .sidebar-content .show-side-dropdown-wrap {
+  opacity: 1;
+  max-height: 100vh;
+}
+.sidebar-wrap .sidebar-content .sidebar-group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white-color);
+  z-index: -1;
+  transform-origin: left;
+  transition: transform 0.6s ease;
+  transform: scaleX(1);
+}
+.sidebar-wrap .sidebar-content .sidebar-group:hover::before {
+  transform-origin: right;
+  transform: transform 0.6s ease;
+  transform: scaleX(0);
+}
+.sidebar-wrap .sidebar-content .sidebar-group img {
+  transition: all 0.3s;
+}
+.sidebar-wrap .sidebar-content .sidebar-group:hover img {
+  filter: brightness(0) invert(1);
+}
+.sidebar-wrap .sidebar-content .sidebar-active {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-blue-color);
+  border-radius: 8px;
+  z-index: -1;
+}
+.sidebar-wrap .sidebar-content .active-img {
+  filter: brightness(0) invert(1);
+}
+.sidebar-wrap .sidebar-content .side-active-label {
+  color: var(--white-color);
+}
+.sidebar-wrap .sidebar-content .sidebar-mid-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 5rem;
+}
+.sidebar-wrap .sidebar-content .sidebar-mid-wrap .channel-wrap {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 11.8125px;
+  align-items: center;
+  color: #616161;
+}
+.sidebar-wrap .sidebar-content .sidebar-mid-wrap .add-apps-wrap {
+  margin-top: 3rem;
+}
+.sidebar-wrap .sidebar-content .sidebar-mid-wrap .add-apps-wrap .add-apps-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 0.4rem;
+  cursor: pointer;
+}
+.sidebar-wrap .sidebar-content .sidebar-mid-wrap .add-apps-wrap .add-apps-box .plus-icon {
+  height: 15px;
+  font-size: 3rem;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  border: 0.15rem solid #8a8a8a;
+}
+.sidebar-wrap .sidebar-content .sidebar-mid-wrap .add-apps-wrap .add-apps-box .add-text {
+  font-weight: 600;
+  font-size: 12.8984px;
+  color: #616161;
+}
+.sidebar-wrap .sidebar-content .settings-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}/*# sourceMappingURL=test.css.map */

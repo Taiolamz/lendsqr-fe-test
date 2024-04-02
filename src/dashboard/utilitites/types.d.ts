@@ -17,6 +17,7 @@ interface TableBodyItems {
 
 interface TableProps {
   onPrevPage?: () => void;
+  pagination?: ReactNode;
   onNextPage?: () => void;
   perPage?: number;
   totalLengthArray?: number;
@@ -39,7 +40,11 @@ interface TableProps {
   header_four?: string;
   header_five?: string;
   header_six?: string;
+  handleClick?: (e: PageChangeCallback) => void;
+  pageCount?: number;
 }
+
+export type PageChangeCallback = ReactPaginate.PageChangeCallback;
 
 interface PageOptions {
   label: number;

@@ -6,7 +6,6 @@ import { useOnClickOutside } from "../../dashboard/utilitites/helpers";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-
 const TableBody = ({
   one,
   two,

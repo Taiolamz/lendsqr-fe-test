@@ -2,19 +2,17 @@ import "../../styles/reusables/table.css";
 import TableHeader from "./table_head";
 import { PageOptions, TableProps } from "../../dashboard/utilitites/types";
 import Select from "react-select";
-import { ArrowLeft, ArrowRight } from "../../assets/icons/svg";
 import { reactSelectStyle } from "../../dashboard/utilitites/helpers";
+import ReactPaginate from "react-paginate";
 
 const TableContainer = ({
   tableHeadData,
   children,
-  activePage,
-  onNextPage,
-  onPrevPage,
-  totalLength,
   perPage,
   setPerPage,
   totalLengthArray,
+  handleClick,
+  pageCount,
 }: TableProps) => {
   const pageOptions: PageOptions[] = [
     {
@@ -63,24 +61,25 @@ const TableContainer = ({
         </div>
         {/* left wrap end */}
 
-        {/* right wrap start */}
-        <div className="paginate-right-wrap">
-          <div className="arrow-wrap" onClick={onPrevPage}>
-            <ArrowLeft className="arrow-icon" />
-          </div>
-          <div className="num-wrap">
-            {/* loop through the array of users */}
-            <p className={activePage ? "active-text" : ""}>1</p>
-            <p className={activePage ? "active-text" : ""}>2</p>
-            <p className={activePage ? "active-text" : ""}>3</p>
-            <p className="ellipePagee-text">...</p>
-            <p className={activePage ? "active-text" : ""}>{totalLength}</p>
-          </div>
-          <div className="arrow-wrap" onClick={onNextPage}>
-            <ArrowRight className="arrow-right-icon" />
-          </div>
+        {/* pagination wrap */}
+        <div className="paginate-wrap">
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel=">"
+            onPageChange={handleClick && handleClick}
+            pageRangeDisplayed={3}
+            pageCount={pageCount ? pageCount : 0}
+            previousLabel="<"
+            marginPagesDisplayed={0}
+            containerClassName="pagination"
+            pageLinkClassName="page-num"
+            previousLinkClassName="page-num"
+            nextLinkClassName="page-num-next"
+            activeClassName="active"
+            nextClassName="next-btn"
+            previousClassName="prev-btn"
+          />
         </div>
-        {/* right wrap end */}
       </div>
       {/* pagination end */}
     </>

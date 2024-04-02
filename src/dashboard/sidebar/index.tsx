@@ -5,10 +5,15 @@ import { sidebar_list } from "../utilitites/sidebar";
 import "../../styles/dashboard/sidebar/sidebar.css";
 import { FaArrowsTurnRight } from "react-icons/fa6";
 import { useState } from "react";
+import { IoIosLogOut } from "react-icons/io";
 
 const Sidebar = () => {
   const navigate = useNavigate();
   const [showSidebar, setShowSidebar] = useState(false);
+  const handleLogout = () => {
+    navigate("/login");
+    localStorage.clear();
+  };
   return (
     <>
       <div className={`sidebar-wrap ${showSidebar ? "show-sidebar-wrap" : ""}`}>
@@ -110,6 +115,12 @@ const Sidebar = () => {
               </div>
             );
           })}
+
+          <div className="logout-wrap" onClick={handleLogout}>
+         {!showSidebar &&   <p className="logout-icon">{"<<"}</p>}
+            <IoIosLogOut size={20} />
+            <p>Logout</p>
+          </div>
         </div>
       </div>
     </>

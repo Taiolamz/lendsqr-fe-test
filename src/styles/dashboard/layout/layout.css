@@ -38,4 +38,8 @@
 }
 .layout-box::-webkit-scrollbar-thumb:hover {
   background: var(--light-green-color);
+}
+
+.hidden-layout-scroll {
+  overflow-y: hidden;
 }/*# sourceMappingURL=layout.css.map */

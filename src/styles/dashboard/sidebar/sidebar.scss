@@ -12,6 +12,7 @@
   z-index: 2;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
+  padding-bottom: 3rem;
 
   @media screen and (max-width: 768px) {
     top: 4.7rem;
@@ -200,6 +201,26 @@
       .sub-label {
         font-weight: 400;
         font-size: 1.6rem;
+      }
+    }
+    .logout-wrap {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      cursor: pointer;
+      margin-top: 5rem;
+      padding: 3rem;
+      font-weight: 500;
+      font-size: 1.5rem;
+      @media screen and (max-width: 768px) {
+        padding: 1rem 1.5rem;
+        padding-bottom: unset;
+      }
+      .logout-icon {
+        display: none;
+        @media screen and (max-width: 768px) {
+          display: flex;
+        }
       }
     }
   }

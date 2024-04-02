@@ -12,6 +12,7 @@
   z-index: 2;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
+  padding-bottom: 3rem;
 }
 @media screen and (max-width: 768px) {
   .sidebar-wrap {
@@ -198,6 +199,30 @@
 .sidebar-wrap .sidebar-items-wrap .sidebar-items-box .sub-label {
   font-weight: 400;
   font-size: 1.6rem;
+}
+.sidebar-wrap .sidebar-items-wrap .logout-wrap {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 5rem;
+  padding: 3rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  .sidebar-wrap .sidebar-items-wrap .logout-wrap {
+    padding: 1rem 1.5rem;
+    padding-bottom: unset;
+  }
+}
+.sidebar-wrap .sidebar-items-wrap .logout-wrap .logout-icon {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .sidebar-wrap .sidebar-items-wrap .logout-wrap .logout-icon {
+    display: flex;
+  }
 }
 @media screen and (max-width: 768px) {
   .sidebar-wrap .hide-text {

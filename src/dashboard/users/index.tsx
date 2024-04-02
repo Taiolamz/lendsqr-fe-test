@@ -12,7 +12,8 @@ import { formatDate } from "../utilitites/helpers";
 import { useNavigate } from "react-router";
 import FilterIcon from "../../assets/icons/filter-results-button.svg";
 import { ActionContext } from "../../context/action-context";
-
+import { PageChangeCallback } from "../utilitites/types";
+// import ReactPaginate from "react-paginate";
 
 interface LimitType {
   label: number;
@@ -23,7 +24,13 @@ const Users = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [limit, setLimit] = useState<LimitType>({ label: 10, value: 10 });
-  const [page, setPage] = useState(1);
+  const [page] = useState(1);
+
+  const [currentItem, setCurrentItem] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffSet, setItemOffSet] = useState(0);
+  const itemsPerPage = 6;
+
   const { users, loading } = useSelector((state: RootState) => state.users);
   const actionCtx = useContext(ActionContext);
 
@@ -44,15 +51,17 @@ const Users = () => {
 
   const handleFilterDrop = () => {
     actionCtx.setIsFilterDrop(!actionCtx.isFilterDrop);
-    // console.log(actionCtx.isFilterDrop);
   };
 
-  const handlePaginate = (param: string) => {
-    if (param === "next") {
-      setPage(page + 1);
-    } else if (param === "prev" && page > 1) {
-      setPage(page - 1);
-    }
+  useEffect(() => {
+    const endOffset = itemOffSet + itemsPerPage;
+    setCurrentItem(users?.slice(itemOffSet, endOffset) as any);
+    setPageCount(Math.ceil(users?.length / itemsPerPage));
+  }, [itemOffSet, itemsPerPage, users]);
+
+  const handleClick = (e: PageChangeCallback) => {
+    const newOffSet = (e.selected * itemsPerPage) % users?.length;
+    setItemOffSet(newOffSet);
   };
 
   return (
@@ -68,12 +77,11 @@ const Users = () => {
       {/* table wrap start */}
       <TableContainer
         tableHeadData={user_table_head_list}
-        onPrevPage={() => handlePaginate("prev")}
-        onNextPage={() => handlePaginate("next")}
         perPage={limit as any}
         setPerPage={(e) => setLimit(e)}
-        totalLength={users.length}
         totalLengthArray={users?.length}
+        handleClick={handleClick}
+        pageCount={pageCount}
       >
         <img
           className="mobile-filter-icon"
@@ -82,7 +90,7 @@ const Users = () => {
           onClick={handleFilterDrop}
         />
         {users.length > 0 ? (
-          users.map((chi: any, idx: any) => {
+          currentItem?.map((chi, idx) => {
             const {
               organization,
               user,
@@ -122,22 +130,6 @@ const Users = () => {
             <p className="img-text">No User Data</p>
           </div>
         )}
-        {/* <ReactPaginate
-          previousLabel="previous"
-          nextLabel="next"
-          breakLabel={"..."}
-          pageCount={25}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={3}
-          onPageChange={handlePageClick}
-          containerClassName=""
-          pageClassName=""
-          pageLinkClassName=""
-          nextClassName=""
-          nextLinkClassName=""
-          breakClassName=""
-          breakLinkClassName=""
-        /> */}
       </TableContainer>
       {/* table wrap end */}
     </div>

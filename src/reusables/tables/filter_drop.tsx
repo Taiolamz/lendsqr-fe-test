@@ -84,8 +84,9 @@ const TableFilterDrop = ({ isVisible, filterRef }: TableFilterDropProp) => {
   };
   return (
     <div
-      ref={filterRef}
+      // ref={filterRef}
       className={`table-drop-wrap ${isVisible ? "show-table-drop-wrap" : ""}`}
+      style={{ zIndex: "999" }}
     >
       {/* filter wrap start */}
       {Object.entries(filterDetails).map(([key, value]) => (
