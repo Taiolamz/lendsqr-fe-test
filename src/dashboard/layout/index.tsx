@@ -15,11 +15,7 @@ const Layout = ({ children }: LayoutProp) => {
     <>
       <Navbar />
       <Sidebar />
-      <div
-        className={`layout-box ${
-          actionCtx.isFilterDrop ? "hidden-layout-scroll" : ""
-        }`}
-      >
+      <div className={`layout-box ${actionCtx.isFilterDrop ? "" : ""}`}>
         {children}
       </div>
     </>
