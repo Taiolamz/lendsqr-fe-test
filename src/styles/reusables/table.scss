@@ -6,6 +6,7 @@
   padding: 3.5rem;
   margin-top: 3rem;
   width: 100%;
+  position: relative;
 
   @media screen and (max-width: 768px) {
     overflow-x: auto;
@@ -18,11 +19,11 @@
     align-items: center;
     text-align: left;
     margin-bottom: 2rem;
-    position: relative;
+    // position: relative;
 
     @media screen and (max-width: 768px) {
       overflow-x: scroll;
-      overflow-y: hidden;
+      // overflow-y: hidden;
       width: 100rem;
     }
 
@@ -189,7 +190,7 @@
 
     .show-table-drop-wrap {
       visibility: visible;
-      top: 5rem;
+      top: 7rem;
       opacity: 1;
     }
   }
@@ -197,6 +198,7 @@
   .table-body-wrap {
     display: flex;
     flex-direction: column;
+    position: relative;
 
     @media screen and (max-width: 768px) {
       overflow-x: scroll;
@@ -208,7 +210,7 @@
       display: grid;
       padding-top: 2rem;
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-      position: relative;
+      // position: relative;
       align-items: center;
 
       p {
@@ -282,11 +284,10 @@
         opacity: 0;
         transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out,
           visibility 0.3s ease-in-out;
-          @media screen and (max-width: 768px) {
-            
+        @media screen and (max-width: 768px) {
           overflow: visible !important;
           z-index: 99;
-          background-color: red;
+          // background-color: red;
         }
 
         .drop-box {
@@ -314,37 +315,6 @@
       border-bottom: 0.1rem solid var(--border-color);
       padding-bottom: 2rem;
     }
-  }
-
-  // @media screen and (max-width: 768px) {
-  //   padding: 2rem;
-  //   margin-top: 2rem;
-
-  //   .table-head-wrap {
-  //     grid-template-columns: 1fr;
-
-  //     .table-drop-wrap {
-  //       width: 100%;
-  //     }
-  //   }
-
-  //   .table-body-wrap {
-  //     .table-row {
-  //       grid-template-columns: 1fr;
-  //       grid-gap: 0.7rem;
-  //       padding-top: 1rem;
-  //       .action-drop-wrap {
-  //         right: 0.5rem;
-  //         top: 2rem;
-  //       }
-  //     }
-  //   }
-  // }
-  .mobile-filter-icon {
-    display: none;
-    // @media screen and (max-width: 768px) {
-    //   display: flex;
-    // }
   }
 }
 

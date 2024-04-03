@@ -83,12 +83,6 @@ const Users = () => {
         handleClick={handleClick}
         pageCount={pageCount}
       >
-        <img
-          className="mobile-filter-icon"
-          src={FilterIcon}
-          alt="filter_icon"
-          onClick={handleFilterDrop}
-        />
         {users.length > 0 ? (
           currentItem?.map((chi, idx) => {
             const {
