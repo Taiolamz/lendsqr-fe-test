@@ -7,6 +7,26 @@
   margin-top: 3rem;
   width: 100%;
   position: relative;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.dashboard-table-wrap::-webkit-scrollbar:vertical {
+  display: none;
+}
+.dashboard-table-wrap::-webkit-scrollbar {
+  width: 0.1rem;
+}
+.dashboard-table-wrap::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+.dashboard-table-wrap::-webkit-scrollbar-thumb {
+  background: var(--light-green-color);
+  border-radius: 30rem;
+}
+.dashboard-table-wrap::-webkit-scrollbar-thumb:hover {
+  background: var(--light-green-color);
 }
 @media screen and (max-width: 768px) {
   .dashboard-table-wrap {
@@ -174,7 +194,6 @@
 .dashboard-table-wrap .table-body-wrap {
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 @media screen and (max-width: 768px) {
   .dashboard-table-wrap .table-body-wrap {
@@ -187,6 +206,7 @@
   display: grid;
   padding-top: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  position: relative;
   align-items: center;
 }
 .dashboard-table-wrap .table-body-wrap .table-row p {
@@ -247,11 +267,31 @@
   visibility: hidden;
   opacity: 0;
   transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.dashboard-table-wrap .table-body-wrap .table-row .action-drop-wrap::-webkit-scrollbar:horizontal {
+  display: none;
+}
+.dashboard-table-wrap .table-body-wrap .table-row .action-drop-wrap::-webkit-scrollbar {
+  width: 0.6rem;
+}
+.dashboard-table-wrap .table-body-wrap .table-row .action-drop-wrap::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+.dashboard-table-wrap .table-body-wrap .table-row .action-drop-wrap::-webkit-scrollbar-thumb {
+  background: var(--light-green-color);
+  border-radius: 30rem;
+}
+.dashboard-table-wrap .table-body-wrap .table-row .action-drop-wrap::-webkit-scrollbar-thumb:hover {
+  background: var(--light-green-color);
 }
 @media screen and (max-width: 768px) {
   .dashboard-table-wrap .table-body-wrap .table-row .action-drop-wrap {
-    overflow: visible !important;
-    z-index: 99;
+    overflow-y: scroll;
+    height: 6.3rem;
   }
 }
 .dashboard-table-wrap .table-body-wrap .table-row .action-drop-wrap .drop-box {
@@ -269,6 +309,11 @@
   visibility: visible;
   top: 5rem;
   opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .dashboard-table-wrap .table-body-wrap .table-row .show-action-drop-wrap {
+    top: 0.5em;
+  }
 }
 .dashboard-table-wrap .table-body-wrap:not(:last-child) {
   border-bottom: 0.1rem solid var(--border-color);

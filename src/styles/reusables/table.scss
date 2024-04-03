@@ -8,9 +8,34 @@
   width: 100%;
   position: relative;
 
+  &::-webkit-scrollbar:vertical {
+    display: none;
+  }
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 0.1rem;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    // -webkit-box-shadow: none !important;
+    background-color: transparent !important;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: var(--light-green-color);
+    border-radius: 30rem;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--light-green-color);
+  }
+
   @media screen and (max-width: 768px) {
     overflow-x: auto;
-    // width: 100rem;
   }
 
   .table-head-wrap {
@@ -19,11 +44,9 @@
     align-items: center;
     text-align: left;
     margin-bottom: 2rem;
-    // position: relative;
 
     @media screen and (max-width: 768px) {
       overflow-x: scroll;
-      // overflow-y: hidden;
       width: 100rem;
     }
 
@@ -198,7 +221,7 @@
   .table-body-wrap {
     display: flex;
     flex-direction: column;
-    position: relative;
+    // position: relative;
 
     @media screen and (max-width: 768px) {
       overflow-x: scroll;
@@ -210,7 +233,7 @@
       display: grid;
       padding-top: 2rem;
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-      // position: relative;
+      position: relative;
       align-items: center;
 
       p {
@@ -284,10 +307,35 @@
         opacity: 0;
         transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out,
           visibility 0.3s ease-in-out;
+
+        &::-webkit-scrollbar:horizontal {
+          display: none;
+        }
+
+        /* width */
+        &::-webkit-scrollbar {
+          width: 0.6rem;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          // -webkit-box-shadow: none !important;
+          background-color: transparent !important;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: var(--light-green-color);
+          border-radius: 30rem;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: var(--light-green-color);
+        }
         @media screen and (max-width: 768px) {
-          overflow: visible !important;
-          z-index: 99;
-          // background-color: red;
+          overflow-y: scroll;
+          height: 6.3rem;
         }
 
         .drop-box {
@@ -308,6 +356,9 @@
         visibility: visible;
         top: 5rem;
         opacity: 1;
+        @media screen and (max-width: 768px) {
+          top: 0.5em;
+        }
       }
     }
 
