@@ -9,7 +9,7 @@
 }
 @media screen and (max-width: 768px) {
   .dashboard-table-wrap {
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 }
 .dashboard-table-wrap .table-head-wrap {
@@ -190,14 +190,6 @@
   position: relative;
   align-items: center;
 }
-.dashboard-table-wrap .table-body-wrap .table-row .table-row-header-wrap {
-  display: none;
-}
-.dashboard-table-wrap .table-body-wrap .table-row .table-row-header-wrap .table-row-header {
-  font-weight: 600;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-}
 .dashboard-table-wrap .table-body-wrap .table-row p {
   font-weight: 400;
   font-size: 1.4rem;
@@ -257,6 +249,13 @@
   opacity: 0;
   transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
+@media screen and (max-width: 768px) {
+  .dashboard-table-wrap .table-body-wrap .table-row .action-drop-wrap {
+    overflow: visible !important;
+    z-index: 99;
+    background-color: red;
+  }
+}
 .dashboard-table-wrap .table-body-wrap .table-row .action-drop-wrap .drop-box {
   display: grid;
   grid-template-columns: 0.3fr 1fr;
@@ -286,6 +285,12 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .pagination-wrap {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 .pagination-wrap .paginate-left-wrap {
   display: flex;
