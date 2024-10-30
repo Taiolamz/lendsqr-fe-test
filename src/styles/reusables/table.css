@@ -132,6 +132,10 @@
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .date-wrap .date-input {
   width: 100%;
+  border: 0.1rem solid var(--border-color);
+  border-radius: 0.8rem;
+  padding: 1.3rem 1rem;
+  background-color: #fff;
 }
 .dashboard-table-wrap .table-head-wrap .table-drop-wrap .table-drop-box .date-wrap .calender-icon {
   position: absolute;

@@ -141,6 +141,10 @@
           align-items: center;
           .date-input {
             width: 100%;
+            border: 0.1rem solid var(--border-color);
+            border-radius: 0.8rem;
+            padding: 1.3rem 1rem;
+            background-color: #fff;
           }
           .calender-icon {
             position: absolute;
